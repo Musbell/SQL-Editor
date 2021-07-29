@@ -1,7 +1,8 @@
 <template>
   <v-simple-table
     fixed-header
-    height="300px"
+    dense
+    height="300"
   >
     <template v-slot:default>
       <thead>

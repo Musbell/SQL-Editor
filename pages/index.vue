@@ -5,22 +5,42 @@
       <v-row>
         <v-col cols="12" sm="10" md="10">
           <v-text-field
-            label="Outlined"
+            v-model="title"
+            label="One"
+            prepend-inner-icon="mdi-file-document-outline"
             placeholder="Placeholder"
-            outlined
+            solo
+            flat
             dense
-            full-width
-            class="ml-5"
+            class="ml-5 font-weight-medium title"
           ></v-text-field>
         </v-col>
         <v-col cols="12" sm="2" md="2">
-          <v-btn
-            depressed
-            color="success"
-          >
-            <v-icon>mdi-play</v-icon>
-            Run
-          </v-btn>
+          <v-tooltip bottom>
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn
+                v-bind="attrs"
+                v-on="on"
+                color="success"
+              >
+                <v-icon>mdi-play</v-icon>
+                Run
+              </v-btn>
+            </template>
+            <span>Run query</span>
+          </v-tooltip>
+          <v-tooltip top>
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn
+                v-bind="attrs"
+                v-on="on"
+                icon
+              >
+                <v-icon>mdi-dock-left</v-icon>
+              </v-btn>
+            </template>
+            <span>Toggle panel</span>
+          </v-tooltip>
         </v-col>
       </v-row>
     </v-col>
@@ -29,6 +49,7 @@
       <multipane class="foo" layout="horizontal">
         <textarea v-model="content" id="editor"></textarea>
         <multipane-resizer></multipane-resizer>
+        <Banner/>
         <Table/>
       </multipane>
     </v-col>
@@ -37,6 +58,7 @@
 <script>
 import { Multipane, MultipaneResizer } from 'vue-multipane';
 import Table from "../components/Table";
+import Banner from "../components/Banner";
 let CodeMirror;
 if(process.client) {
   CodeMirror = require('codemirror')
@@ -48,11 +70,13 @@ if(process.client) {
 export default {
   name: 'Index',
   components: {
+    Banner,
     Table,
     Multipane,
     MultipaneResizer
   },
   data: () => ({
+    title: 'My first query',
     content: 'select * from  users'
   }),
   mounted() {

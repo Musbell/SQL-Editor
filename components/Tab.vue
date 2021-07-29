@@ -6,49 +6,71 @@
       center-active
       :hide-slider="true"
       active-class="active-class"
-      class="mt-4"
+      show-arrows
     >
       <v-tab :ripple="false">
+        <v-icon left small>
+          mdi-file-document-outline
+        </v-icon>
         One
-        <v-icon right x-small>
+        <v-btn
+          icon
+          small
+          class="ml-2"
+          color="grey"
+        >
+        <v-icon x-small>
           mdi-close
         </v-icon>
+        </v-btn>
       </v-tab>
       <v-tab :ripple="false">
+        <v-icon left small>
+          mdi-file-document-outline
+        </v-icon>
         Two
-        <v-icon right x-small>
-          mdi-close
-        </v-icon>
+        <v-btn
+          icon
+          small
+          class="ml-2"
+          color="grey"
+        >
+          <v-icon x-small>
+            mdi-close
+          </v-icon>
+        </v-btn>
       </v-tab>
       <v-tab :ripple="false">
+        <v-icon left small>
+          mdi-file-document-outline
+        </v-icon>
         Three
-        <v-icon right x-small>
-          mdi-close
-        </v-icon>
+        <v-btn
+          icon
+          small
+          class="ml-2"
+          color="grey"
+        >
+          <v-icon x-small>
+            mdi-close
+          </v-icon>
+        </v-btn>
       </v-tab>
       <v-tab :ripple="false">
+        <v-icon left small>
+          mdi-file-document-outline
+        </v-icon>
         Four
-        <v-icon right x-small>
-          mdi-close
-        </v-icon>
-      </v-tab>
-      <v-tab :ripple="false">
-        Five
-        <v-icon right x-small>
-          mdi-close
-        </v-icon>
-      </v-tab>
-      <v-tab :ripple="false">
-        Six
-        <v-icon right x-small>
-          mdi-close
-        </v-icon>
-      </v-tab>
-      <v-tab :ripple="false">
-        Seven
-        <v-icon right x-small>
-          mdi-close
-        </v-icon>
+        <v-btn
+          icon
+          small
+          class="ml-2"
+          color="grey"
+        >
+          <v-icon x-small>
+            mdi-close
+          </v-icon>
+        </v-btn>
       </v-tab>
     </v-tabs>
   </v-card>
@@ -62,5 +84,8 @@ export default {
 <style scoped>
   .active-class {
     background: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
   }
 </style>

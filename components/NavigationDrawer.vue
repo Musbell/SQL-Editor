@@ -18,7 +18,7 @@
       >
         <v-list-item class="px-2">
           <v-list-item-avatar>
-            <v-img src="https://randomuser.me/api/portraits/women/75.jpg"></v-img>
+            <v-img src="https://avatars.githubusercontent.com/u/4477954?v=4"></v-img>
           </v-list-item-avatar>
         </v-list-item>
 
@@ -32,13 +32,20 @@
             v-for="item in items"
             :key="item.title"
           >
-            <v-list-item-action>
-              <v-icon>{{ item.icon }}</v-icon>
-            </v-list-item-action>
+            <v-tooltip right>
+              <template v-slot:activator="{ on, attrs }">
+                <v-list-item-action
+                  v-bind="attrs"
+                  v-on="on">
+                  <v-icon>{{ item.icon }}</v-icon>
+                </v-list-item-action>
 
-            <v-list-item-content>
-              <v-list-item-title>{{ item.title }}</v-list-item-title>
-            </v-list-item-content>
+                <v-list-item-content>
+                  <v-list-item-title>{{ item.title }}</v-list-item-title>
+                </v-list-item-content>
+              </template>
+              <span>{{ item.title }}</span>
+            </v-tooltip>
           </v-list-item>
         </v-list>
       </v-navigation-drawer>
@@ -54,25 +61,53 @@
                 ></v-text-field>
               </v-col>
               <v-col sm="3">
-                <v-btn
-                  fab
-                  dark
-                  x-small
-                  color="primary"
-                >
-                  <v-icon dark>
-                    mdi-plus
-                  </v-icon>
-                </v-btn>
+                <v-tooltip bottom>
+                  <template v-slot:activator="{ on, attrs }">
+                    <v-btn
+                      v-bind="attrs"
+                      v-on="on"
+                      fab
+                      dark
+                      small
+                      color="primary"
+                    >
+                      <v-icon dark>
+                        mdi-plus
+                      </v-icon>
+                    </v-btn>
+                  </template>
+                  <span>New query</span>
+                </v-tooltip>
               </v-col>
             </v-row>
           </v-toolbar-title>
         </v-toolbar>
         <v-treeview
           activatable
+          hoverable
+          open-all
           dense
           :items="links"
-        ></v-treeview>
+        >
+          <template v-slot:prepend="{ item, open }">
+            <v-icon v-if="item.parent">
+              {{ open ? 'mdi-folder-open' : 'mdi-folder' }}
+            </v-icon>
+            <v-icon v-else>
+              mdi-file-document-outline
+            </v-icon>
+          </template>
+          <template v-slot:append="{ item }">
+            <v-btn
+              icon
+              color="pink"
+            >
+            <v-icon v-if="!item.parent" small>
+              mdi-delete
+            </v-icon>
+            </v-btn>
+          </template>
+        </v-treeview>
       </v-list>
     </v-row>
   </v-navigation-drawer>
@@ -88,33 +123,24 @@ export default {
       fixed: false,
       items: [
         {
-          icon: 'mdi-apps',
-          title: 'Welcome',
+          icon: 'mdi-file-document-outline',
+          title: 'Queries',
           to: '/'
         },
         {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
+          icon: 'mdi-database',
+          title: 'Schema',
           to: '/inspire'
         }
       ],
       links: [
         {
           id: 1,
-          name: 'My queries :',
+          name: "My queries :",
+          parent: true,
           children: [
-            { id: 2, name: 'Calendar : app' },
-            { id: 3, name: 'Chrome : app' },
-            { id: 4, name: 'Webstorm : app' },
-          ],
-        },
-        {
-          id: 5,
-          name: 'Draft :',
-          children: [
-            { id: 6, name: 'Calendar : app' },
-            { id: 7, name: 'Chrome : app' },
-            { id: 8, name: 'Webstorm : app' },
+            { id: 2, name: 'One' },
+            { id: 3, name: 'Two' },
           ],
         },
       ],
