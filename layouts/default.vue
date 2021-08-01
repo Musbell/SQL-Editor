@@ -1,6 +1,5 @@
 <template>
   <v-app dark>
-    <SystemBar/>
     <AppBar/>
     <NavigationDrawer/>
     <v-main>
@@ -14,10 +13,9 @@
 <script>
 import AppBar from "../components/AppBar";
 import NavigationDrawer from "../components/NavigationDrawer";
-import SystemBar from "../components/SystemBar";
 export default {
  name: 'default',
-  components: {SystemBar, NavigationDrawer, AppBar},
+  components: {NavigationDrawer, AppBar},
 }
 </script>
 <style>
