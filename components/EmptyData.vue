@@ -1,7 +1,7 @@
 <template>
   <v-row justify="center" align="center">
     <v-col class="emptyData">
-      <img width="200" src="~/assets/images/no-query.png"/>
+      <v-icon size="200" color="grey">mdi-database</v-icon>
       <p class="title grey--text">Welcome! Select query to get started.</p>
     </v-col>
   </v-row>

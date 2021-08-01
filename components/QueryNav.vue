@@ -1,5 +1,6 @@
 <template>
   <v-card flat class="grey lighten-5">
+    <!-- Dialog -->
      <v-dialog
         v-model="updateQuerynameDialog"
         transition="dialog-top-transition"
@@ -25,6 +26,8 @@
             </v-card-actions>
           </v-card>
       </v-dialog>
+
+    <!-- Nav header -->
     <v-toolbar flat class="grey lighten-5">
       <v-toolbar-title>
         <v-row>
@@ -61,6 +64,8 @@
         </v-row>
       </v-toolbar-title>
     </v-toolbar>
+
+    <!-- Query nav -->
     <v-treeview
       activatable
       hoverable

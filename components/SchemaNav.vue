@@ -24,12 +24,6 @@ export default {
   data: () => ({
     initiallyOpen: ['public'],
     files: {
-      html: 'mdi-language-html5',
-      js: 'mdi-nodejs',
-      json: 'mdi-code-json',
-      md: 'mdi-language-markdown',
-      pdf: 'mdi-file-pdf',
-      png: 'mdi-file-image',
       formular: 'mdi-function-variant',
       table: 'mdi-table',
     },
@@ -39,22 +33,22 @@ export default {
         name: 'default',
         children: [
           {
-            name: 'Tables',
+            name: 'Tables 1',
             children: [
               {
               name: 'Customers',
               file: 'table',
-            },
-            {
-            name: 'Views 0',
-            file: 'table',
-          },
-          {
-            name: 'Functions 0',
-            file: 'formular',
-          },
+            }
             ],
           },
+          {
+              name: 'Views 0',
+              file: 'table',
+            },
+            {
+              name: 'Functions 0',
+              file: 'formular',
+            },
         ],
       },
     ],

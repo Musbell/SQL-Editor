@@ -83,17 +83,10 @@ export const mutations = {
   },
 
   /**
-   * Update inputed sql query from the query panel
+   * open query on query panel
+   * and hide opened query result on result panel
    * @param state
    * @param query
-   */
-  updateSqlQuery: (state, query) => (state.selectedQuery.query = query),
-
-  /**
-   * open query on sql query panel
-   * and hide opened result
-   * @param state
-   * @param query // { id, name }
    */
   openQuery: (state, query) => {
     state.selectedQuery = {...query}
@@ -114,6 +107,5 @@ export const actions = {
   removeQuery: ({ commit }, payload) => commit('removeQuery', payload), // remove query from nav
   openQuery: ({ commit }, payload) => commit('openQuery', payload), // open selected query
   toggleShowResult: ({ commit }) => setTimeout(() => commit('toggleShowResult'), 500), // show query result
-  updateSqlQuery: ({ commit }, payload) => commit('updateSqlQuery', payload),
   updateQuery: ({ commit }, payload) => commit('updateQuery', payload)
 }

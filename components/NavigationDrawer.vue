@@ -12,6 +12,8 @@
       class="fill-height"
       no-gutters
     >
+
+    <!-- Query nav -->
       <v-navigation-drawer
         mini-variant
         mini-variant-width="56"
@@ -58,6 +60,7 @@
         </v-list>
       </v-navigation-drawer>
       <v-list class="grow">
+        <!-- Dynamic nav list -->
         <component v-bind:is="currentNavComponent"></component>
       </v-list>
     </v-row>
@@ -77,19 +80,20 @@ export default {
         {
           icon: 'mdi-file-document-outline',
           title: 'Queries',
-          to: '/',
           component: 'QueryNav'
         },
         {
           icon: 'mdi-database',
           title: 'Schema',
-          to: '/inspire',
           component: 'SchemaNav'
         }
       ],
     }
   },
   computed: {
+    /**
+     * Track active nav
+     */
     currentNavComponent() {
       return this.currentNav
     },

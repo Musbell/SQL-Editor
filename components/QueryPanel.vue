@@ -5,7 +5,7 @@
           <Banner/>
           <Table v-if="showResult"/>
           <div v-else class="emptyData">
-            <img width="100" src="~/assets/images/no-result.png">
+            <v-icon size="100" color="grey">mdi-table-large</v-icon>
             <p class="grey--text">Run query to show result</p>
           </div>
     </multipane>
@@ -17,6 +17,7 @@ import { Multipane, MultipaneResizer } from 'vue-multipane';
 import Table from "../components/Table";
 
 let CodeMirror;
+// Initialie codemirror on client mode
 if(process.client) {
   CodeMirror = require('codemirror')
   require('codemirror/lib/codemirror.css')
@@ -57,7 +58,6 @@ export default {
     })
   },
   data: () => ({
-    panelIsHorizontal: true,
     query: "select * from  customers",
   }),
 }
