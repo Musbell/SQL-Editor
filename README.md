@@ -7,6 +7,8 @@ Steps i took to optimize the page load on Chrome v92.0.4515.107
 - Use Chrome Performance report to find improvements 
 - Introduced changes one by one 
 - Audit after each change
+
+
 ![alt text](http://url/to/https://res.cloudinary.com/musbell/image/upload/v1627850693/Screenshot_2021-08-01_at_9.36.01_PM_wcblff.png)
 
 ## Build Setup

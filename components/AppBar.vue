@@ -14,7 +14,7 @@
       icon
       x-large
       :link="true"
-      href="https://github.com/Musbell/SQL-Editor"
+      href="https://github.com/Musbell/SQL-Editor/tree/release/0.1.0"
     >
       <v-icon>mdi-github</v-icon>
     </v-btn>
