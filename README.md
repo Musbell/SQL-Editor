@@ -1,5 +1,14 @@
 # sqlEditor
 
+## Page Load
+
+Steps i took optimize the page load on Chrome v92.0.4515.107
+- Audit page using lighthouse that creates a baseline and gives actionable tips
+- Use report to find improvements
+- Introduced changes one by one 
+- Audit after each change
+
+
 ## Build Setup
 
 ```bash
