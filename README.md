@@ -9,7 +9,6 @@ Steps i took to optimize the page load on Chrome v92.0.4515.107
 - Audit after each change
 ![alt text](http://url/to/https://res.cloudinary.com/musbell/image/upload/v1627850693/Screenshot_2021-08-01_at_9.36.01_PM_wcblff.png)
 
-
 ## Build Setup
 
 ```bash
@@ -77,3 +76,8 @@ More information about the usage of this directory in [the documentation](https:
 This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
 
 More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+
+## Todo:
+- Add more feature set
+- Enhance user experince
+- Improve and add more unit and E2E test
